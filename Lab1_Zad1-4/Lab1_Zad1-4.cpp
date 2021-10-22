@@ -5,7 +5,7 @@ using namespace std;
 const char* IntCastExceptionMessage = "Podana wartosc nie mogla zostac zrzutowana do typu int.";
 
 /* Wspólna funckja do wyświetlania zadań */
-void WyswietlZadanie(string Header, void Func())
+auto WyswietlZadanie(string Header, void Func()) -> void
 {
 	cout << "+---------------------------------+" << endl;
 	cout << Header << endl;
@@ -17,14 +17,14 @@ void WyswietlZadanie(string Header, void Func())
 }
 
 #pragma region Zadania
-void Zad1()
+auto Zad1() -> void
 {
 	cout << "Karol" << endl;
 	cout << "24574" << endl;
 	cout << "Polsko Japonska Akademia Technik Komputerowych" << endl;
 }
 
-void Zad2()
+auto Zad2() -> void
 {
 	int Number;
 
@@ -50,7 +50,7 @@ void Zad2()
 	}
 }
 
-void Zad3()
+auto Zad3() -> void
 {
 	int Number;
 
@@ -72,7 +72,7 @@ void Zad3()
 	}
 }
 
-void Zad4()
+auto Zad4() -> void
 {
 	int L1, L2, L3;
 
@@ -108,7 +108,7 @@ void Zad4()
 }
 #pragma endregion
 
-int main()
+auto main() -> int
 {
 	/* Obsługa wyjątków */
 	try
