@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -62,6 +64,12 @@ auto Zad3() -> void
 		throw exception{ IntCastExceptionMessage };
 	}
 
+	if (Number == 0)
+	{
+		cout << "Liczba jest zadna (0)" << endl;
+		return;
+	}
+
 	if (Number % 2 == 0)
 	{
 		cout << "Liczba jest parzysta" << endl;
@@ -100,10 +108,31 @@ auto Zad4() -> void
 		throw exception{ IntCastExceptionMessage };
 	}
 
+	/* Rozwiazanie 1 */
 	int Max;
 	Max = (L1 > L2) ? L1 : L2;
 	Max = (Max > L3) ? Max : L3;
+	cout << "Najwieksza liczba to " << Max << endl;
 
+	/* Rozwiazanie 2 */
+	vector<int> Liczby{ L1,L2,L3 };
+	Max = *max_element(Liczby.begin(), Liczby.end());
+	cout << "Najwieksza liczba to " << Max << endl;
+
+
+	/* Rozwiazanie 3 */
+	if (L1 >= L2 && L1 >= L3)
+	{
+		Max = L1;
+	}
+	else if (L2 >= L1 && L2 >= L3)
+	{
+		Max = L2;
+	}
+	else 
+	{
+		Max = L3;
+	}
 	cout << "Najwieksza liczba to " << Max << endl;
 }
 #pragma endregion
